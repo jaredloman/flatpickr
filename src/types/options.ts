@@ -83,6 +83,8 @@ export interface BaseOptions {
     adjust these to fit your needs as necessary.
   */
   classAmPm: string;
+  classButtonsContainer: string;
+  classConfirmButton: string;
   classContainer: string;
   classCurrentMonthContainer: string;
   classCurrentYearInput: string;
@@ -108,6 +110,7 @@ export interface BaseOptions {
   classSecondElement: string;
   classTimeContainer: string;
   classTimeSeparator: string;
+  classTodayButton: string;
   classWeeks: string;
   classWeekWrapper: string;
   classWeekdayContainer: string;
@@ -123,6 +126,9 @@ export interface BaseOptions {
 
   /* Whether calendar should close after date selection */
   closeOnSelect: boolean;
+
+  /* Choose the text in the confirm button */
+  confirmButtonText: string;
 
   /*
     If "mode" is "multiple", this string will be used to join
@@ -292,11 +298,20 @@ Use it along with "enableTime" to create a time picker. */
   /* Creates a wrapper to position the calendar. Use this if the input is inside a scrollable element */
   static: boolean;
 
+  /* Shows a confirm/close button on Calendar */
+  showConfirmButton: boolean;
+
+  /* Shows a button to reset selection to today */
+  showTodayButton: boolean;
+
   /* Sets the number of months to show */
   showMonths?: number;
 
   /* Displays time picker in 24 hour mode without AM/PM selection when enabled.*/
   time_24hr: boolean;
+
+  /* Choose the text for the Today Button */
+  todayButtonText: string;
 
   /* Display week numbers left of the calendar. */
   weekNumbers: boolean;
@@ -324,6 +339,8 @@ export interface ParsedOptions {
   ariaDateFormat: string;
   autoFillDefaultTime: boolean;
   classAmPm: string;
+  classButtonsContainer: string;
+  classConfirmButton: string;
   classContainer: string;
   classCurrentMonthContainer: string;
   classCurrentYearInput: string;
@@ -349,6 +366,7 @@ export interface ParsedOptions {
   classSecondElement: string;
   classTimeContainer: string;
   classTimeSeparator: string;
+  classTodayButton: string;
   classWeeks: string;
   classWeekWrapper: string;
   classWeekdayContainer: string;
@@ -357,6 +375,7 @@ export interface ParsedOptions {
   classWrapper: string;
   clickOpens: boolean;
   closeOnSelect: boolean;
+  confirmButtonText: string;
   conjunction: string;
   dateFormat: string;
   defaultDate?: Date | Date[];
@@ -403,9 +422,12 @@ export interface ParsedOptions {
   positionElement?: HTMLElement;
   prevArrow: string;
   shorthandCurrentMonth: boolean;
+  showConfirmButton: boolean;
+  showTodayButton: boolean;
   showMonths: number;
   static: boolean;
   time_24hr: boolean;
+  todayButtonText: string;
   weekNumbers: boolean;
   wrap: boolean;
 }
@@ -423,6 +445,8 @@ export const defaults: ParsedOptions = {
   ariaDateFormat: "F j, Y",
   autoFillDefaultTime: true,
   classAmPm: 'flatpickr-am-pm',
+  classButtonsContainer: 'flatpickr-buttons-container',
+  classConfirmButton: 'flatpickr-confirm',
   classContainer: 'flatpickr-calendar',
   classCurrentMonthContainer: 'flatpickr-current-month',
   classCurrentYearInput: 'cur-year',
@@ -448,6 +472,7 @@ export const defaults: ParsedOptions = {
   classSecondElement: 'flatpickr-second',
   classTimeContainer: 'flatpickr-time',
   classTimeSeparator: 'flatpickr-time-separator',
+  classTodayButton: 'flatpickr-today',
   classWeeks: 'flatpickr-weeks',
   classWeekWrapper: 'flatpickr-weekwrapper',
   classWeekdayElement: 'flatpickr-weekday',
@@ -457,6 +482,7 @@ export const defaults: ParsedOptions = {
   clickOpens: true,
   closeOnSelect: true,
   conjunction: ", ",
+  confirmButtonText: 'Confirm',
   dateFormat: "Y-m-d",
   defaultHour: 12,
   defaultMinute: 0,
@@ -517,9 +543,12 @@ export const defaults: ParsedOptions = {
   prevArrow:
     "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z' /></svg>",
   shorthandCurrentMonth: false,
+  showConfirmButton: false,
+  showTodayButton: false,
   showMonths: 1,
   static: false,
   time_24hr: false,
+  todayButtonText: 'Today',
   weekNumbers: false,
   wrap: false,
 };

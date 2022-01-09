@@ -486,6 +486,15 @@ function FlatpickrInstance(
       bind(self.daysContainer, "click", selectDate);
     }
 
+    if (self.buttonsContainer !== undefined) {
+      if(self.confirmButton !== undefined) {
+        bind(self.confirmButton, "click", onConfirmButtonClick);
+      }
+      if(self.todayButton !== undefined) {
+        bind(self.todayButton, "click", onTodayButtonClick);
+      }
+    }
+
     if (
       self.timeContainer !== undefined &&
       self.minuteElement !== undefined &&
@@ -652,6 +661,37 @@ function FlatpickrInstance(
 
     if (self.config.enableTime) {
       self.outerContainer.appendChild(buildTime());
+    }
+
+    if (self.config.showConfirmButton || self.config.showTodayButton) {
+      self.buttonsContainer = createElement<HTMLDivElement>(
+          "div",
+          self.config.classButtonsContainer
+      );
+
+      if (self.config.showTodayButton) {
+        self.todayButton = createElement<HTMLButtonElement>(
+            "button",
+            self.config.classTodayButton
+        );
+        self.todayButton.setAttribute("type", "button");
+        self.todayButton.innerHTML = self.config.todayButtonText;
+
+        self.buttonsContainer.appendChild(self.todayButton);
+      }
+
+      if (self.config.showConfirmButton) {
+        self.confirmButton = createElement<HTMLButtonElement>(
+            "button",
+            self.config.classConfirmButton
+        );
+        self.confirmButton.setAttribute("type", "button");
+        self.confirmButton.innerHTML = self.config.confirmButtonText;
+
+        self.buttonsContainer.appendChild(self.confirmButton);
+      }
+
+      self.outerContainer.appendChild(self.buttonsContainer);
     }
 
     toggleClass(
@@ -2893,6 +2933,14 @@ function FlatpickrInstance(
     } else if ((eventTarget as Element).classList.contains("arrowDown")) {
       self.changeYear(self.currentYear - 1);
     }
+  }
+
+  function onConfirmButtonClick() {
+    self.close();
+  }
+
+  function onTodayButtonClick() {
+    self.jumpToDate(new Date());
   }
 
   function timeWrapper(

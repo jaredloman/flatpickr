@@ -22,6 +22,9 @@ export interface Elements {
   rContainer?: HTMLDivElement;
   dayContainer?: HTMLDivElement;
   daysContainer?: HTMLDivElement;
+  buttonsContainer?: HTMLDivElement;
+  confirmButton?: HTMLButtonElement;
+  todayButton?: HTMLButtonElement;
   days: HTMLDivElement;
 
   weekWrapper?: HTMLDivElement;
