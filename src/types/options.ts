@@ -79,6 +79,43 @@ export interface BaseOptions {
   autoFillDefaultTime: boolean;
 
   /*
+    Custom input classes to provide more flexible theming.
+    adjust these to fit your needs as necessary.
+  */
+  classAmPm: string;
+  classContainer: string;
+  classCurrentMonthContainer: string;
+  classCurrentYearInput: string;
+  classDayContainer: string;
+  classDaysContainer: string;
+  classDisabledElement: string;
+  classDowClass: string;
+  classDowElement: string;
+  classHourElement: string;
+  classInnerContainer: string;
+  classInputElement: string;
+  classMainView: string;
+  classMinElement: string;
+  classMobileElement: string;
+  classMonthContainer: string;
+  classMonthDropdownMonth: string;
+  classMonthDropdownMonths: string;
+  classMonthsContainer: string;
+  classNavNextMonth: string;
+  classNavPrevMonth: string;
+  classNumInputWrapper: string;
+  classOuterContainer: string;
+  classSecondElement: string;
+  classTimeContainer: string;
+  classTimeSeparator: string;
+  classWeeks: string;
+  classWeekWrapper: string;
+  classWeekdayContainer: string;
+  classWeekdaysContainer: string;
+  classWeekdayElement: string;
+  classWrapper: string;
+
+  /*
     Whether clicking on the input should open the picker.
     Set it to false if you only want to open the calendar programmatically
   */
@@ -286,6 +323,38 @@ export interface ParsedOptions {
   appendTo?: HTMLElement;
   ariaDateFormat: string;
   autoFillDefaultTime: boolean;
+  classAmPm: string;
+  classContainer: string;
+  classCurrentMonthContainer: string;
+  classCurrentYearInput: string;
+  classDayContainer: string;
+  classDaysContainer: string;
+  classDisabledElement: string;
+  classDowClass: string;
+  classDowElement: string;
+  classHourElement: string;
+  classInnerContainer: string;
+  classInputElement: string;
+  classMainView: string;
+  classMinElement: string;
+  classMobileElement: string;
+  classMonthDropdownMonth: string;
+  classMonthDropdownMonths: string;
+  classMonthContainer: string;
+  classMonthsContainer: string;
+  classNavNextMonth: string;
+  classNavPrevMonth: string;
+  classNumInputWrapper: string;
+  classOuterContainer: string;
+  classSecondElement: string;
+  classTimeContainer: string;
+  classTimeSeparator: string;
+  classWeeks: string;
+  classWeekWrapper: string;
+  classWeekdayContainer: string;
+  classWeekdaysContainer: string;
+  classWeekdayElement: string;
+  classWrapper: string;
   clickOpens: boolean;
   closeOnSelect: boolean;
   conjunction: string;
@@ -353,6 +422,38 @@ export const defaults: ParsedOptions = {
     window.navigator.userAgent.indexOf("MSIE") === -1,
   ariaDateFormat: "F j, Y",
   autoFillDefaultTime: true,
+  classAmPm: 'flatpickr-am-pm',
+  classContainer: 'flatpickr-calendar',
+  classCurrentMonthContainer: 'flatpickr-current-month',
+  classCurrentYearInput: 'cur-year',
+  classDayContainer: 'dayContainer',
+  classDaysContainer: 'flatpickr-days',
+  classDisabledElement: 'flatpickr-disabled',
+  classDowClass: 'flatpickr-day',
+  classDowElement: 'flatpickr-day',
+  classHourElement: 'flatpickr-hour',
+  classInnerContainer: 'flatpickr-innerContainer',
+  classInputElement: 'flatpickr-input',
+  classMainView: 'flatpickr-rContainer',
+  classMinElement: 'flatpickr-minute',
+  classMobileElement: 'flatpickr-mobile',
+  classMonthContainer: 'flatpicker-month',
+  classMonthDropdownMonth: 'flatpickr-monthDropdown-month',
+  classMonthDropdownMonths: 'flatpickr-monthDropdown-months',
+  classMonthsContainer: 'flatpicker-months',
+  classNavNextMonth: 'flatpickr-next-month',
+  classNavPrevMonth: 'flatpickr-prev-month',
+  classNumInputWrapper: 'numInputWrapper',
+  classOuterContainer: 'flatpicker-outerContainer',
+  classSecondElement: 'flatpickr-second',
+  classTimeContainer: 'flatpickr-time',
+  classTimeSeparator: 'flatpickr-time-separator',
+  classWeeks: 'flatpickr-weeks',
+  classWeekWrapper: 'flatpickr-weekwrapper',
+  classWeekdayElement: 'flatpickr-weekday',
+  classWeekdayContainer: 'flatpickr-weekdays',
+  classWeekdaysContainer: 'flatpickr-weekdaycontainer',
+  classWrapper: 'flatpickr-wrapper',
   clickOpens: true,
   closeOnSelect: true,
   conjunction: ", ",

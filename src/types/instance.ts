@@ -17,8 +17,10 @@ export interface Elements {
   _positionElement: HTMLElement;
   weekdayContainer: HTMLDivElement;
   calendarContainer: HTMLDivElement;
+  outerContainer?: HTMLDivElement;
   innerContainer?: HTMLDivElement;
   rContainer?: HTMLDivElement;
+  dayContainer?: HTMLDivElement;
   daysContainer?: HTMLDivElement;
   days: HTMLDivElement;
 
